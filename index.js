@@ -2,13 +2,13 @@ import express from "express";
 import UserRouter from "./routes/user.route.js";
 import cors from "cors";
 import mongoose from "mongoose";
-import path from "path";
+// import path from "path";
 import dotenv from "dotenv";
 
 dotenv.config(); // in case you move URI to .env later
 
 const app = express();
-const _dirname = path.resolve();
+// const _dirname = path.resolve();
 
 // Middleware
 app.use(express.json());
@@ -44,10 +44,10 @@ app.use((err, req, res, next) => {
 app.use("/user", UserRouter);
 
 // Serve frontend
-app.use(express.static(path.join(_dirname, "/Frontend/dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(_dirname, "Frontend", "dist", "index.html"));
-});
+// app.use(express.static(path.join(_dirname, "/Frontend/dist")));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(_dirname, "Frontend", "dist", "index.html"));
+// });
 
 // Start server
 app.listen(4000, () => {
