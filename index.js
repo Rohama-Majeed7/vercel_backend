@@ -3,9 +3,9 @@ import UserRouter from "./routes/user.route.js";
 import cors from "cors";
 import mongoose from "mongoose";
 import path from "path";
-// import dotenv from "dotenv";
+import dotenv from "dotenv";
 
-// dotenv.config(); // in case you move URI to .env later
+dotenv.config(); // in case you move URI to .env later
 
 const app = express();
 const _dirname = path.resolve();
@@ -30,7 +30,7 @@ app.use((err, req, res, next) => {
 // ✅ CORRECT MongoDB connection block
 (async () => {
   try {
-    const uri ="mongodb+srv://rohamaEcommerce:ryLNH8FVCpbsaZeG@cluster0.1jprhyy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    const uri =process.env.MONGODB_URI
     // ryLNH8FVCpbsaZeG
     await mongoose.connect(uri);
 
