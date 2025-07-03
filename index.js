@@ -48,8 +48,8 @@ app.use("/user", UserRouter);
 // app.get("*", (req, res) => {
 //   res.sendFile(path.resolve(_dirname, "Frontend", "dist", "index.html"));
 // });
-
+const PORT = process.env.PORT || 3000
 // Start server
-app.listen(4000, () => {
-  console.log("🚀 Server is running on port 4000");
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
