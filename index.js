@@ -20,7 +20,9 @@ app.use(
     allowedHeaders: ["Authorization", "Content-Type"],
   })
 );
-
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
 // Error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
